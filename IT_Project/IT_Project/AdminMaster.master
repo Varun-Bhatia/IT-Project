@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" style="overflow: hidden; margin=20px">
+        <div>
+            <asp:Panel ID="PnlTop" runat="server" Height="15%" Width="100%" BackColor="#888888"
+                Style="padding: 20px">
+                <asp:Image ID="ImgLogo" runat="server" Height="120px" Width="200px"
+                    ImageUrl="~/images/logo.png" ImageAlign="Middle" />
+                <asp:Label ID="LblTitle" runat="server" Font-Size="XX-Large">
+                        Asset Management System
+                </asp:Label>
+                <asp:Label ID="LblWelcome" runat="server" Font-Size="Medium" Text="Welcome "></asp:Label>
+                <div style="float: right; padding: 20px; align-items: center">
+                    Theme: 
+                <asp:DropDownList ID="DdlTheme" runat="server" AutoPostBack="true"
+                    OnSelectedIndexChanged="DdlTheme_SelectedIndexChanged">
+                    <asp:ListItem>Light</asp:ListItem>
+                    <asp:ListItem>Dark</asp:ListItem>
+                </asp:DropDownList>
+                </div>
+            </asp:Panel>
+            <asp:Panel ID="PnlLeft" runat="server" Height="500px" Width="15%" BackColor="#AAAAAA"
+                Style="padding: 20px">
+                <asp:HyperLink ID="HlAssets" runat="server" NavigateUrl="~/Assets.aspx"
+                    Font-Size="X-Large">
+                Assets
+                </asp:HyperLink>
+                <br />
+                <br />
+                <asp:HyperLink ID="HlRequests" runat="server" NavigateUrl="~/Requests.aspx"
+                    Font-Size="X-Large">
+                Requests
+                </asp:HyperLink>
+                <br />
+                <br />
+                <asp:HyperLink ID="HlUsers" runat="server" NavigateUrl="~/Users.aspx"
+                    Font-Size="X-Large">
+                Users
+                </asp:HyperLink>
+                <br />
+                <br />
+                <asp:HyperLink ID="HlReport" runat="server" NavigateUrl="~/Report.aspx"
+                    Font-Size="X-Large">
+                Report
+                </asp:HyperLink>
+            </asp:Panel>
+            <asp:ContentPlaceHolder ID="CphMainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
