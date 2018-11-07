@@ -9,17 +9,17 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server" style="overflow: hidden; margin: 20px">
+    <form id="form1" runat="server" style="overflow: hidden">
         <div>
             <asp:Panel ID="PnlTop" runat="server" Height="15%" Width="100%" BackColor="#888888"
-                style="padding:20px">
+                Style="padding: 20px">
                 <asp:Image ID="ImgLogo" runat="server" Height="120px" Width="200px"
                     ImageUrl="~/images/logo.png" ImageAlign="Middle" />
                 <asp:Label ID="LblTitle" runat="server" Font-Size="XX-Large">
                         Asset Management System
-                    </asp:Label>
+                </asp:Label>
                 <asp:Label ID="LblWelcome" runat="server" Font-Size="Medium" Text="Welcome "></asp:Label>
-                <div style="float: right;padding:20px;align-items:center">
+                <div style="float: right; padding: 20px; align-items: center">
                     Theme: 
                 <asp:DropDownList ID="DdlTheme" runat="server" AutoPostBack="true"
                     OnSelectedIndexChanged="DdlTheme_SelectedIndexChanged">
@@ -29,16 +29,19 @@
                 </div>
             </asp:Panel>
             <asp:Panel ID="PnlLeft" runat="server" Height="500px" Width="15%" BackColor="#AAAAAA"
-                style="padding:20px">
-                <asp:HyperLink ID="HlRequests" runat="server" NavigateUrl="~/CreateRequest.aspx"
-                    Font-Size="X-Large" Text="New Request"/>
+                Style="padding: 20px">
+                <asp:HyperLink ID="HlRequests" runat="server" NavigateUrl="~/UserAssetView.aspx"
+                    Font-Size="X-Large" Text="New Request" />
                 <br />
                 <br />
-                <asp:HyperLink ID="HlHistory" runat="server" NavigateUrl="~/History.aspx"
-                    Font-Size="X-Large" Text="History"/>
+                <asp:HyperLink ID="HlHistory" runat="server" NavigateUrl="~/UserHistory.aspx"
+                    Font-Size="X-Large" Text="History" />
             </asp:Panel>
-            <asp:ContentPlaceHolder ID="CphMainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <asp:Panel ID="PnlRight" runat="server" Height="500px"
+                Style="padding: 20px">
+                <asp:ContentPlaceHolder ID="CphMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </asp:Panel>
         </div>
     </form>
 </body>

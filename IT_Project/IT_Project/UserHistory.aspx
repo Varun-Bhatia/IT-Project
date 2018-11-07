@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMasterPage.master" AutoEventWireup="true" CodeFile="UserHistory.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="UserHistory.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<asp:Content ID="Content2" ContentPlaceHolderID="CphMainContent" Runat="Server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" SelectCommand="SELECT * FROM [Requests] WHERE [UserName]=@UserName" ConnectionString="Data Source=(localdb)\MSSQLlocalDB;Initial Catalog=ITProject;Integrated Security=True">
         <SelectParameters>
             <asp:SessionParameter Name="UserName" SessionField="UserName" />

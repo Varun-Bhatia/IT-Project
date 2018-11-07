@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="UserAssetRequest.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<asp:Content ID="Content2" ContentPlaceHolderID="CphMainContent" Runat="Server">
     Asset Name: <asp:Label ID="AssetName" runat="server" Text="Label"></asp:Label><br />
     Quantity Available: <asp:Label ID="AQuantity" runat="server" Text="Label"></asp:Label><br />
     Request Quantity: <asp:TextBox ID="Quantity" runat="server"></asp:TextBox><br />

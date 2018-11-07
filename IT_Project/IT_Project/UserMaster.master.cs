@@ -14,9 +14,9 @@ public partial class UserMaster : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["LoggedIn"] == null || (Session["LoggedIn"] as string).Equals("User"))
-            Response.Redirect("Login.aspx");
-        LblWelcome.Text += Session["UserName"];
+        //if (Session["LoggedIn"] == null || (Session["LoggedIn"] as string).Equals("Admin"))
+        //    Response.Redirect("Login.aspx");
+        LblWelcome.Text = "Welcome " + Session["UserName"];
     }
 
     protected void DdlTheme_SelectedIndexChanged(object sender, EventArgs e)

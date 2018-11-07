@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
             String status = DataBinder.Eval(e.Row.DataItem, "Status").ToString();
             if (status.Equals("Approved"))
             {
-                DateTime time = (DateTime)DataBinder.Eval(e.Row.DataItem, "DateofApproval");
+                DateTime time = DateTime.Parse(DataBinder.Eval(e.Row.DataItem, "DateofApproval") as string);
                 TimeSpan ts = DateTime.Now.Subtract(time);
 
                 if (ts.TotalDays > 7)

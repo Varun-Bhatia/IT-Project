@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMasterPage.master" AutoEventWireup="true" CodeFile="UserAssetView.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.master" AutoEventWireup="true" CodeFile="UserAssetView.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<asp:Content ID="Content2" ContentPlaceHolderID="CphMainContent" Runat="Server">
     Select required asset from table and click submit<br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" SelectCommand="SELECT * FROM [Assets]" ConnectionString="Data Source=(localdb)\MSSQLlocalDB;Initial Catalog=ITProject;Integrated Security=True"></asp:SqlDataSource>
     <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="AssetId" AutoGenerateColumns="false">

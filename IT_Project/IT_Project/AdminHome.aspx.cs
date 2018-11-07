@@ -24,7 +24,7 @@ public partial class Default2 : System.Web.UI.Page
                         LblAssets.Text = "You have " + reader["Count"] + " Assets";
                     }
                 }
-                cmd.CommandText = "SELECT COUNT(DISTINCT [RequestId]) as Count FROM [Requests] WHERE DateofApproval IS NULL";
+                cmd.CommandText = "SELECT COUNT(DISTINCT [RequestId]) as Count FROM [Requests] WHERE [Status] = 'Pending'";
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
