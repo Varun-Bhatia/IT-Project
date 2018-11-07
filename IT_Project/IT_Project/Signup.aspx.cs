@@ -30,19 +30,23 @@ public partial class Signup : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        if(IsValid)
+        if (IsValid)
         {
             String cs = WebConfigurationManager.ConnectionStrings["ITProjectConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(cs);
-            SqlCommand command = new SqlCommand("INSERT INTO [User] VALUES(@Password,@UserType,@Email,@UserName)", con);
-            //command.Parameters.AddWithValue("@UserId", "6");
-            command.Parameters.AddWithValue("@Password", Password.Text);
-            command.Parameters.AddWithValue("@UserType", "User");
-            command.Parameters.AddWithValue("@Email", Email.Text);
-            command.Parameters.AddWithValue("@UserName", Username.Text);
-            con.Open();
-            command.ExecuteNonQuery();
-            con.Close();
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                using (SqlCommand command = new SqlCommand("INSERT INTO [User] VALUES(@Password,@UserType,@Email,@UserName)", con))
+                {
+                    //command.Parameters.AddWithValue("@UserId", "6");
+                    command.Parameters.AddWithValue("@Password", Password.Text);
+                    command.Parameters.AddWithValue("@UserType", "User");
+                    command.Parameters.AddWithValue("@Email", Email.Text);
+                    command.Parameters.AddWithValue("@UserName", Username.Text);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    
+                }
+            }
             Response.Redirect("SignupSuccess.aspx");
         }
     }

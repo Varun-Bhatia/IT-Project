@@ -25,7 +25,7 @@
             <asp:Parameter Name="AssetId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AllowSorting="true"
+    <asp:GridView ID="GridView1" runat="server" AllowSorting="true" ShowFooter="true"
         DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="AssetId">
         <Columns>
             <%--<asp:BoundField DataField="AssetId" HeaderText="AssetId" InsertVisible="False" ReadOnly="True" SortExpression="AssetId" />--%>
@@ -36,5 +36,7 @@
             <%--<asp:CommandField ShowInsertButton="true" InsertText="Add" />--%>
         </Columns>
     </asp:GridView>
+    <br />
+    <asp:Button ID="BtnAdd" runat="server" Text="Add Asset" PostBackUrl=""/>
 </asp:Content>
 
