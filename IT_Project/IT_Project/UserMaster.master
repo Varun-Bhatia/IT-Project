@@ -21,8 +21,8 @@
                 <asp:Label ID="LblWelcome" runat="server" Font-Size="Medium" Text="Welcome "></asp:Label>
                 <div style="float: right; padding: 20px; align-items: center">
                     Theme: 
-                <asp:DropDownList ID="DdlTheme" runat="server" AutoPostBack="true"
-                    OnSelectedIndexChanged="DdlTheme_SelectedIndexChanged">
+                <%--<asp:DropDownList ID="DdlTheme" runat="server" AutoPostBack="true"--%>
+                    <%--OnSelectedIndexChanged="DdlTheme_SelectedIndexChanged">--%>
                     <asp:ListItem>Light</asp:ListItem>
                     <asp:ListItem>Dark</asp:ListItem>
                 </asp:DropDownList>
@@ -38,8 +38,8 @@
                     Font-Size="X-Large" Text="History" />
             </asp:Panel>
             <asp:Panel ID="PnlRight" runat="server" Height="500px"
-                Style="padding: 20px">
-                <asp:ContentPlaceHolder ID="CphMainContent" runat="server">
+                Style="padding: 20px" >
+                <asp:ContentPlaceHolder ID="CphMainContent" runat="server" >
                 </asp:ContentPlaceHolder>
             </asp:Panel>
         </div>

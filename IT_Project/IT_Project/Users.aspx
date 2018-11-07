@@ -31,5 +31,6 @@
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
         </Columns>
     </asp:GridView>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>
 

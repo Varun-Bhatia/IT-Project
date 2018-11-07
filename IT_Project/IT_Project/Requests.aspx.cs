@@ -9,6 +9,12 @@ using System.Web.UI.WebControls;
 
 public partial class Default2 : System.Web.UI.Page
 {
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        HttpCookie cookie = new HttpCookie("Theme");
+        Page.Theme = cookie["Theme"];
+
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -20,12 +26,13 @@ public partial class Default2 : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(cs))
         {
             string query = "UPDATE [Requests] SET [Status] = 'Approved' " +
-                ", [DateofApproval] = " + DateTime.Now.ToString() +
+                           ", [DateofApproval] = @DateofApproval" +
                 " WHERE [RequestId] = @RequestId";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 string txt = (sender as Button).CommandArgument;
                 cmd.Parameters.AddWithValue("RequestId", txt);
+                cmd.Parameters.AddWithValue("DateofApproval", System.DateTime.Now);
                 conn.Open();
                 try
                 {
@@ -38,6 +45,7 @@ public partial class Default2 : System.Web.UI.Page
                 }
             }
         }
+        Response.Redirect("Requests.aspx");
     }
 
     protected void BtnReject_Click(object sender, EventArgs e)
@@ -55,5 +63,7 @@ public partial class Default2 : System.Web.UI.Page
                     LblDetails.Text = "Operation Failed.";
             }
         }
+
+        Response.Redirect("Requests.aspx");
     }
 }

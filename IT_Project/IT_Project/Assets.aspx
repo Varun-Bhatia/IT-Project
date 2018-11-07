@@ -36,5 +36,6 @@
             <%--<asp:CommandField ShowInsertButton="true" InsertText="Add" />--%>
         </Columns>
     </asp:GridView>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>
 

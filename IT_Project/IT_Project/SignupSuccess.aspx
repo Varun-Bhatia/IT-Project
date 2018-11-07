@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Success
+            Successfully signed up<br />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Return to Login Page</asp:HyperLink>
         </div>
     </form>
 </body>
