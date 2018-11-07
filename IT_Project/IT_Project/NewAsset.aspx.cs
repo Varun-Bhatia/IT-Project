@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,6 +16,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void BtnSubmit_Click(object sender, EventArgs e)
     {
+        String cs = WebConfigurationManager.ConnectionStrings["ITProjectConnectionString"].ConnectionString;
         using (SqlConnection con = new SqlConnection(cs))
         {
             using (SqlCommand command = new SqlCommand("INSERT INTO [Assets] (AssetName,TotalQuantity,AvailableQuantity) VALUES(@AssetName,@TotalQuantity,@TotalQuantity)", con))
