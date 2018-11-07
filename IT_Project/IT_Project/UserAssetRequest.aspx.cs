@@ -12,6 +12,13 @@ public partial class _Default : System.Web.UI.Page
     String cs = @"Data Source=(localdb)\MSSQLlocalDB;Initial Catalog=ITProject;Integrated Security=True";
     int avb = 0;
     String aname = "";
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["theme"] == null)
+            Theme = "Light";
+        else
+            Theme = Session["theme"].ToString();
+    }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -48,8 +55,7 @@ public partial class _Default : System.Web.UI.Page
             command = new SqlCommand("UPDATE Assets SET AvailableQuantity = " + (avb-req) + " WHERE AssetId =\'" + Request.QueryString["AssetId"] + "\'", con);
             command.ExecuteNonQuery();
             con.Close();
-            Label1.Text = "Request Submitted Successfully";
-            Label1.Visible = true;
+            Response.Redirect("UserHistory.aspx");
         }
         else
         {

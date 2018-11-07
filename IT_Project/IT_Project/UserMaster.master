@@ -5,11 +5,12 @@
 <html>
 <head runat="server">
     <title></title>
+ 
     <asp:ContentPlaceHolder ID="CphHead" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server" style="overflow: hidden">
+    <form id="form1" runat="server" style="overflow: hidden; margin: 20px">
         <div>
             <asp:Panel ID="PnlTop" runat="server" Height="15%" Width="100%" BackColor="#888888"
                 Style="padding: 20px">
@@ -19,17 +20,10 @@
                         Asset Management System
                 </asp:Label>
                 <asp:Label ID="LblWelcome" runat="server" Font-Size="Medium" Text="Welcome "></asp:Label>
-                <div style="float: right; padding: 20px; align-items: center">
-                    Theme: 
-                <%--<asp:DropDownList ID="DdlTheme" runat="server" AutoPostBack="true"--%>
-                    <%--OnSelectedIndexChanged="DdlTheme_SelectedIndexChanged">--%>
-                    <asp:ListItem>Light</asp:ListItem>
-                    <asp:ListItem>Dark</asp:ListItem>
-                </asp:DropDownList>
-                </div>
+            
             </asp:Panel>
             <asp:Panel ID="PnlLeft" runat="server" Height="500px" Width="15%" BackColor="#AAAAAA"
-                Style="padding: 20px">
+                Style="padding: 20px; float: left">
                 <asp:HyperLink ID="HlRequests" runat="server" NavigateUrl="~/UserAssetView.aspx"
                     Font-Size="X-Large" Text="New Request" />
                 <br />
@@ -42,8 +36,9 @@
                     OnClick="BtnLogout_Click" />
 
             </asp:Panel>
-            <asp:Panel ID="PnlRight" runat="server" Height="500px"
-                Style="padding: 20px" >
+                        <asp:Panel ID="PnlRight" runat="server" Height="500px"
+                Style="padding: 20px; margin: 20px">
+  
                 <asp:ContentPlaceHolder ID="CphMainContent" runat="server" >
                 </asp:ContentPlaceHolder>
             </asp:Panel>

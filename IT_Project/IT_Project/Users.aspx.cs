@@ -9,9 +9,10 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_PreInit(object sender, EventArgs e)
     {
-        HttpCookie cookie = new HttpCookie("Theme");
-        Page.Theme = cookie["Theme"];
-
+        if (Session["theme"] == null)
+            Theme = "Light";
+        else
+            Theme = Session["theme"].ToString();
     }
 
     protected void Page_Load(object sender, EventArgs e)

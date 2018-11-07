@@ -55,7 +55,7 @@
                 <br />
                 <br />
                 <asp:Button ID="BtnLogout" runat="server" Text="Logout"
-                    OnClick="BtnLogout_Click" />
+                    OnClick="BtnLogout_Click1" />
             </asp:Panel>
             <asp:Panel ID="PnlRight" runat="server" Height="500px"
                 Style="padding: 20px; margin: 20px">

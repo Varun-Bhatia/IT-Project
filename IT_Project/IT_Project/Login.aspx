@@ -8,18 +8,20 @@
 </head>
 <body>
     <form id="form1" runat="server" >
-        <div >
+        <div style="align-content:center;text-align:center;margin:auto" >
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logo.png" />
+            <br /><br />
             <asp:Label ID="Label1" runat="server" Text="Username: " ></asp:Label>
             <asp:TextBox ID="Username" runat="server"></asp:TextBox>
             
-            <br />
+            <br /><br />
             <asp:Label ID="Label2" runat="server" Text="Password:"></asp:Label>
-            <asp:TextBox ID="Password" runat="server"></asp:TextBox>
-            <br />
+            <asp:TextBox ID="Password" runat="server"></asp:TextBox> 
+            <br /><br />
             <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button_Login" />
-            <br />
-            <asp:Button ID="Button2" runat="server" Text="Signup" OnClick="Button_Signup" />
-            <br />
+            <br /><br />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Signup.aspx">SignUp</asp:HyperLink>
+            <br /><br />
             <asp:Label ID="Label3" runat="server" Text="Invalid Credentials" Visible="false"></asp:Label>
         </div>
     </form>

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CphMainContent" Runat="Server">
     Welcome!
     <br />
-    Select Theme:<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList><br />
+    Select Theme:<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="theme_SelectedIndexChanged"></asp:DropDownList><br />
     <asp:Label ID="LblAssets" runat="server" ></asp:Label>
     <br />
     <asp:Label ID="LblRequests" runat="server" ></asp:Label>

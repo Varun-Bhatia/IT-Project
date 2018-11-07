@@ -8,6 +8,13 @@ using System.Drawing;
 
 public partial class _Default : System.Web.UI.Page
 {
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["theme"] == null)
+            Theme = "Light";
+        else
+            Theme = Session["theme"].ToString();
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -33,10 +40,14 @@ public partial class _Default : System.Web.UI.Page
                     e.Row.BackColor = Color.Green;
                 }
             }
-            else
+            else if(status.Equals("Pending"))
             {
                 e.Row.BackColor = Color.Yellow;
 
+            }
+            else
+            {
+                e.Row.BackColor = Color.Gray;
             }
         }
     }

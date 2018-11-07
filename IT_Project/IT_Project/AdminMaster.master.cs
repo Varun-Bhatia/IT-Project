@@ -27,8 +27,8 @@ public partial class AdminMaster : System.Web.UI.MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["LoggedIn"] == null || (Session["LoggedIn"] as string).Equals("User"))
-        //    Response.Redirect("Login.aspx");
+        if (Session["LoggedIn"] == null || (Session["LoggedIn"] as string).Equals("User"))
+            Response.Redirect("Login.aspx");
         LblWelcome.Text = "Welcome " + Session["UserName"];
         /*if (!IsPostBack)
         {
@@ -50,14 +50,14 @@ public partial class AdminMaster : System.Web.UI.MasterPage
             //httpCookie["Theme"] = DdlTheme.SelectedValue;
             //Response.Cookies.Add(httpCookie);
             //Server.Transfer(Request.FilePath);
-    }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        httpCookie = new HttpCookie("Theme");
-        httpCookie["Theme"] = DdlTheme.SelectedValue;
-        Response.Cookies.Add(httpCookie);
-        Server.Transfer(Request.FilePath);
-
     }*/
+
+ 
+
+    protected void BtnLogout_Click1(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("Login.aspx");
+
+    }
 }
