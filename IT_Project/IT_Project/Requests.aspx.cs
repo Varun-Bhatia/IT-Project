@@ -20,11 +20,12 @@ public partial class Default2 : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(cs))
         {
             string query = "UPDATE [Requests] SET [Status] = 'Approved' " +
-                //", [DateofApproval] = " + DateTime.Now.ToString() +
+                ", [DateofApproval] = " + DateTime.Now.ToString() +
                 " WHERE [RequestId] = @RequestId";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("RequestId", (sender as Button).CommandArgument);
+                string txt = (sender as Button).CommandArgument;
+                cmd.Parameters.AddWithValue("RequestId", txt);
                 conn.Open();
                 try
                 {

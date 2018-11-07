@@ -27,6 +27,7 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+    <asp:Label 
     <br />
     <asp:Label ID="LblDetails" runat="server"></asp:Label>
     <br />
@@ -42,6 +43,5 @@
             <asp:BoundField DataField="DateofApproval" HeaderText="DateofApproval" SortExpression="DateofApproval" />
         </Columns>
     </asp:GridView>
-
 </asp:Content>
 

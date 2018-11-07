@@ -9,7 +9,14 @@ public partial class AdminMaster : System.Web.UI.MasterPage
 {
     protected void Page_PreInit(object sender, EventArgs e)
     {
-        //DdlTheme.SelectedValue = Page.Theme = Request.Cookies["Theme"]?["Theme"];
+        HttpCookie httpCookie = Request.Cookies["Theme"];
+        if (httpCookie == null)
+        {
+            httpCookie = new HttpCookie("Theme");
+            httpCookie["Theme"] = "Light";
+        }
+        DdlTheme.SelectedValue = Page.Theme = httpCookie["Theme"];
+        Response.Cookies.Add(httpCookie);
     }
 
     protected void Page_Load(object sender, EventArgs e)
