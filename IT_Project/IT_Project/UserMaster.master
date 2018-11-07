@@ -9,7 +9,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server" style="overflow: hidden; margin=20px">
+    <form id="form1" runat="server" style="overflow: hidden; margin: 20px">
         <div>
             <asp:Panel ID="PnlTop" runat="server" Height="15%" Width="100%" BackColor="#888888"
                 style="padding:20px">
@@ -31,7 +31,7 @@
             <asp:Panel ID="PnlLeft" runat="server" Height="500px" Width="15%" BackColor="#AAAAAA"
                 style="padding:20px">
                 <asp:HyperLink ID="HlRequests" runat="server" NavigateUrl="~/CreateRequest.aspx"
-                    Font-Size="X-Large"Text="New Request"/>
+                    Font-Size="X-Large" Text="New Request"/>
                 <br />
                 <br />
                 <asp:HyperLink ID="HlHistory" runat="server" NavigateUrl="~/History.aspx"

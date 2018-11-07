@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Web.Configuration;
 
 public partial class Signup : System.Web.UI.Page
 {
@@ -31,7 +32,7 @@ public partial class Signup : System.Web.UI.Page
     {
         if(IsValid)
         {
-            String cs = @"Data Source=(localdb)\MSSQLlocalDB;Initial Catalog=ITProject;Integrated Security=True";
+            String cs = WebConfigurationManager.ConnectionStrings["ITProjectConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(cs);
             SqlCommand command = new SqlCommand("INSERT INTO [User] VALUES(@Password,@UserType,@Email,@UserName)", con);
             //command.Parameters.AddWithValue("@UserId", "6");

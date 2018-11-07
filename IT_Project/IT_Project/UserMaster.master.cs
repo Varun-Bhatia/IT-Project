@@ -9,7 +9,7 @@ public partial class UserMaster : System.Web.UI.MasterPage
 {
     protected void Page_PreInit(object sender, EventArgs e)
     {
-        DdlTheme.SelectedValue = Page.Theme = Request.Cookies["Theme"]?["Theme"];
+        //DdlTheme.SelectedValue = Page.Theme = Request.Cookies["Theme"]?["Theme"];
     }
 
     protected void Page_Load(object sender, EventArgs e)

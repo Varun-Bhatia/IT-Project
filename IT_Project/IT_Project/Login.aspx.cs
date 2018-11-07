@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Sql;
@@ -16,7 +16,7 @@ public partial class Login : System.Web.UI.Page
 
     protected void Button_Login(object sender, EventArgs e)
     {
-        String cs = @"Data Source=(localdb)\MSSQLlocalDB;Initial Catalog=ITProject;Integrated Security=True";
+        String cs = WebConfigurationManager.ConnectionStrings["ITProjectConnectionString"].ConnectionString;
         SqlConnection conn = new SqlConnection(cs);
         conn.Open();
         SqlCommand cmd = new SqlCommand("SELECT * FROM [User]", conn);
@@ -29,10 +29,12 @@ public partial class Login : System.Web.UI.Page
                 Session["UserType"] = reader["UserType"];
                 if(reader["UserType"].Equals("Admin"))
                 {
+                    Session["LoggedIn"] = "Admin";
                     Response.Redirect("AdminHome.aspx");
                 }
                 else
                 {
+                    Session["LoggedIn"] = "User";
                     Response.Redirect("UserHome.aspx");
                 }
             }

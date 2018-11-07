@@ -9,14 +9,14 @@ public partial class AdminMaster : System.Web.UI.MasterPage
 {
     protected void Page_PreInit(object sender, EventArgs e)
     {
-        DdlTheme.SelectedValue = Page.Theme = Request.Cookies["Theme"]?["Theme"];
+        //DdlTheme.SelectedValue = Page.Theme = Request.Cookies["Theme"]?["Theme"];
     }
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["LoggedIn"] == null || (Session["LoggedIn"] as string).Equals("Admin"))
-            Response.Redirect("Login.aspx");
-        LblWelcome.Text += Session["UserName"];
+        //if (Session["LoggedIn"] == null || (Session["LoggedIn"] as string).Equals("User"))
+        //    Response.Redirect("Login.aspx");
+        LblWelcome.Text = "Welcome " + Session["UserName"];
     }
 
     protected void DdlTheme_SelectedIndexChanged(object sender, EventArgs e)
@@ -27,5 +27,4 @@ public partial class AdminMaster : System.Web.UI.MasterPage
         httpCookie["Theme"] = DdlTheme.SelectedValue;
         Response.Cookies.Add(httpCookie);
     }
-
 }
