@@ -27,4 +27,11 @@ public partial class UserMaster : System.Web.UI.MasterPage
         httpCookie["Theme"] = DdlTheme.SelectedValue;
         Response.Cookies.Add(httpCookie);
     }
+
+    protected void BtnLogout_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("Login.aspx");
+    }
+
 }

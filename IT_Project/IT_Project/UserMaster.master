@@ -36,6 +36,11 @@
                 <br />
                 <asp:HyperLink ID="HlHistory" runat="server" NavigateUrl="~/UserHistory.aspx"
                     Font-Size="X-Large" Text="History" />
+                <br />
+                <br />
+                <asp:Button ID="BtnLogout" runat="server" Text="Logout"
+                    OnClick="BtnLogout_Click" />
+
             </asp:Panel>
             <asp:Panel ID="PnlRight" runat="server" Height="500px"
                 Style="padding: 20px">
